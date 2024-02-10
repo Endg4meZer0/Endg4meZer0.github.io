@@ -1,0 +1,312 @@
+<head>
+    <title>DAVA Stuff</title>
+</head>
+<body>
+    <h1>Основные функции</h1>
+    <a href="../index.html">Вернуться назад</a>
+    <h3>Глоссарик</h3>
+    <b><code>number</code></b> - любой из числовых типов, среди которых есть <b><code>int</code></b>, <b><code>float</code></b> и <b><code>long</code></b> (<b><code>int64</code></b>)
+    <h3>Статические функции</h3>
+    <table cellpadding="8px" border="2px">
+        <tr>
+            <td><b>Название</b></td>
+            <td><b>Возвращает</b></td>
+            <td><b>Пояснение</b></td>
+            <td><b>Пример</b></td>
+        </tr>
+        <tr>
+            <td>
+                <code>abs(number)</code><br>
+            </td>
+            <td>
+                <b><code>number</code></b>
+            </td>
+            <td>
+                Берёт модуль от числа.<br>
+                Переменные:
+                <ul>
+                    <li><code>number</code> - <b><code>number</code></b> - любое число.</li>
+                </ul>
+            </td>
+            <td>
+                <code>abs(-12) -> 12</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>max(number1, number2)</code><br>
+            </td>
+            <td>
+                <b><code>number</code></b>
+            </td>
+            <td>
+                Возращает максимальное из двух чисел.<br>
+                Переменные:
+                <ul>
+                    <li><code>number1</code> - <b><code>number</code></b> - любое число.</li>
+                    <li><code>number2</code> - <b><code>number</code></b> - любое число.</li>
+                </ul>
+            </td>
+            <td>
+                <code>max(-12, 12) -> 12</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>min(number1, number2)</code><br>
+            </td>
+            <td>
+                <b><code>number</code></b>
+            </td>
+            <td>
+                Возращает минимальное из двух чисел.<br>
+                Переменные:
+                <ul>
+                    <li><code>number1</code> - <b><code>number</code></b> - любое число.</li>
+                    <li><code>number2</code> - <b><code>number</code></b> - любое число.</li>
+                </ul>
+            </td>
+            <td>
+                <code>min(-12, 12) -> -12</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>clamp(number1, number2, number3)</code><br>
+            </td>
+            <td>
+                <b><code>number</code></b>
+            </td>
+            <td>
+                Возращает среднее (т.е. ни максимальное, ни минимальное) из трёх чисел.<br>
+                Переменные:
+                <ul>
+                    <li><code>number1</code> - <b><code>number</code></b> - любое число.</li>
+                    <li><code>number2</code> - <b><code>number</code></b> - любое число.</li>
+                    <li><code>number3</code> - <b><code>number</code></b> - любое число.</li>
+                </ul>
+            </td>
+            <td>
+                <code>clamp(-12, 0, 12) -> 0</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>round(number)</code><br>
+            </td>
+            <td>
+                <b><code>number</code></b>
+            </td>
+            <td>
+                Возращает округлённое до ближайшего число того же типа, что и входное (т.е. если на вход подан <b><code>float</code></b>, то и на выходе будет округлённый, но всё еще <b><code>float</code></b>).<br>
+                Переменные:
+                <ul>
+                    <li><code>number</code> - <b><code>number</code></b> - любое число.</li>
+                </ul>
+            </td>
+            <td>
+                <code>round(125.112200) -> 125.0</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>floor(number)</code><br>
+            </td>
+            <td>
+                <b><code>number</code></b>
+            </td>
+            <td>
+                Возращает округлённое до ближайшего меньшего число того же типа, что и входное (т.е. если на вход подан <b><code>float</code></b>, то и на выходе будет округлённый, но всё еще <b><code>float</code></b>).<br>
+                Переменные:
+                <ul>
+                    <li><code>number</code> - <b><code>number</code></b> - любое число.</li>
+                </ul>
+            </td>
+            <td>
+                <code>floor(125.612200) -> 125.0</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>ceil(number)</code><br>
+            </td>
+            <td>
+                <b><code>number</code></b>
+            </td>
+            <td>
+                Возращает округлённое до ближайшего большего число того же типа, что и входное (т.е. если на вход подан <b><code>float</code></b>, то и на выходе будет округлённый, но всё еще <b><code>float</code></b>).<br>
+                Переменные:
+                <ul>
+                    <li><code>number</code> - <b><code>number</code></b> - любое число.</li>
+                </ul>
+            </td>
+            <td>
+                <code>ceil(125.112200) -> 126.0</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>rand(number)</code><br>
+            </td>
+            <td>
+                <b><code>number</code></b>
+            </td>
+            <td>
+                Возвращает случайное число от <code>0</code> до <code>number-1</code>.<br>
+                Переменные:
+                <ul>
+                    <li><code>number</code> - <b><code>int</code></b> - любое целочисленное число.</li>
+                </ul>
+            </td>
+            <td>
+                <code>rand(tanks.Size)</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>power(number, power)</code><br>
+            </td>
+            <td>
+                <b><code>number</code></b>
+            </td>
+            <td>
+                Возвращает число <code>number</code> в степени <code>power</code>.<br>
+                Переменные:
+                <ul>
+                    <li><code>number</code> - <b><code>int</code></b> - любое целочисленное число.</li>
+                    <li><code>power</code> - <b><code>int</code></b> - любое целочисленное число.</li>
+                </ul>
+            </td>
+            <td>
+                <code>power(10, 2) -> 100</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>int(value)</code>
+            </td>
+            <td>
+                <b><code>number</code></b>
+            </td>
+            <td>
+                Возращает целочисленное число, получаемое из переменной какого-либо типа.<br>
+                Переменные:
+                <ul>
+                    <li><code>value</code> - <b><code>any</code></b> - любое значение.<br>Если является строкой, то при неправильном формате (например, <code>"5 км/ч"</code> вместо просто <code>"5"</code>) откатывается к <code>0</code>.</li>
+                </ul>
+            </td>
+            <td>
+                <code>int(true) -> 1</code><br>
+                <code>int("2") -> 2</code><br>
+                <code>int(3.14) -> 3</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>float(value)</code>
+            </td>
+            <td>
+                <b><code>number</code></b>
+            </td>
+            <td>
+                Возращает вещественное число, получаемое из переменной какого-либо типа.<br>
+                Переменные:
+                <ul>
+                    <li><code>value</code> - <b><code>any</code></b> - любое значение.<br>Если является строкой, то при неправильном формате (например, <code>"5.12 км/ч"</code> вместо просто <code>"5.12"</code>) откатывается к <code>0.0</code>.</li>
+                </ul>
+            </td>
+            <td>
+                <code>float(true) -> 1.0</code><br>
+                <code>float("2.234") -> 2.234</code><br>
+                <code>float(3) -> 3.0</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>str(number)</code><br>
+                <code>str(enum)</code><br>
+                <code>str(number, eType)</code><br>
+                <code>str(number, eType, key)</code><br>
+            </td>
+            <td>
+                <b><code>string</code></b>
+            </td>
+            <td>
+                Превращает определённые данные в строку.<br>
+                Переменные:
+                <ul>
+                    <li><code>number</code> - <b><code>number</code></b> - любое число.</li>
+                    <li><code>enum</code> - <b><code>enum</code></b> - значение, получаемое обращением к eType через точку, например, <code>eGameMode.Rating</code></li>
+                    <li><code>eType</code> - <b><code>enumType</code></b> - тот enum, из которого берётся значение по номеру <code>number</code>, например, <code>eGameMode</code></li>
+                    <li><code>key</code> - <b><code>string</code></b> - если в eType хранится не просто значение, а несколько значений через словарь, то используется для получения конкретного по его ключу. Например, для получения name из <code>eAim[0].name</code>, нужно писать <code>str(0, eAim, \"name\")</code></li>
+                </ul>
+            </td>
+            <td>
+                <code>str(12)</code><br>
+                <code>str(eGameMode.Rating)</code><br>
+                <code>str(1, eGameMode)</code><br>
+                <code>str(0, eAim, \"name\")</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>str1000Separated(int)</code><br>
+            </td>
+            <td>
+                <b><code>string</code></b>
+            </td>
+            <td>
+                Превращает целочисленное число в строку, где тысячи отделены пробелами.<br>
+                Переменные:
+                <ul>
+                    <li><code>int</code> - <b><code>int</code></b> - любое целочисленное число.</li>
+                </ul>
+            </td>
+            <td>
+                <code>str1000Separated(1234) -> "1 234"</code><br>
+                <code>str1000Separated(12345678) -> "12 345 678"</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>shortStr(int)</code><br>
+            </td>
+            <td>
+                <b><code>string</code></b>
+            </td>
+            <td>
+                Превращает целочисленное число в строку, где большие разряды сокращены с помощью использования "k", "m" и т.п..<br>
+                Переменные:
+                <ul>
+                    <li><code>int</code> - <b><code>int</code></b> - любое целочисленное число.</li>
+                </ul>
+            </td>
+            <td>
+                <code>shortStr(1234) -> "1.2k"</code><br>
+                <code>shortStr(12345678) -> "12.3m"</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>localize(string, [parameters])</code><br>
+            </td>
+            <td>
+                <b><code>string</code></b>
+            </td>
+            <td>
+                Локализирует строку через поиск соответствующего ей значения в <code>Strings\[локализация].yaml</code>.<br>
+                Если в значении присутствуют некие параметры, указанные через <code>%(параметр)</code>, то соответственно использовать <code>parameters</code> для их определения.<br>
+                Переменные:
+                <ul>
+                    <li><code>string</code> - <b><code>string</code></b> - строка, соответствующая ключу из <code>Strings\[локализация].yaml</code>.</li>
+                    <li><code>parameters</code> - <b><code>map&lt;string, string&gt;</string></code></b> - параметры в виде <code>{ \"параметр\" = \"значение\"; }</code>.<br>Значение может быть задано с использованием того же <code>str</code> и других превращающих данные в строку функций.</li>
+                </ul>
+            </td>
+            <td>
+                <code>localize(key)</code><br>
+                <code>localize(key, { \"title\" = \"Название\"; })</code><br>
+                <code>localize(key, { \"index\" = str(currentIndex); })</code>
+            </td>
+        </tr>
+    </table>
+</body>
