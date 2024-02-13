@@ -1,12 +1,15 @@
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>DAVA Stuff</title>
 </head>
 <body>
-    <h1>Основные функции</h1>
+    <h1>Основные функции, использующиеся повсеместно по коду игры</h1>
     <a href="../index.html">Вернуться назад</a>
-    <h3>Глоссарик</h3>
+    <h2>Глоссарик</h2>
     <b><code>number</code></b> - любой из числовых типов, среди которых есть <b><code>int</code></b>, <b><code>float</code></b> и <b><code>long</code></b> (<b><code>int64</code></b>)
-    <h3>Статические функции</h3>
+    <h2>Статические функции</h2>
+    <h3>Числовые функции</h3>
     <table cellpadding="8px" border="2px">
         <tr>
             <td><b>Название</b></td>
@@ -176,6 +179,7 @@
                     <li><code>number</code> - <b><code>int</code></b> - любое целочисленное число.</li>
                     <li><code>power</code> - <b><code>int</code></b> - любое целочисленное число.</li>
                 </ul>
+                <i>К сожалению, не работает с дробными числами, а то можно было бы сделать какой-нибудь внутриигровой счётчик WN7 в профиле...</i>
             </td>
             <td>
                 <code>power(10, 2) -> 100</code>
@@ -192,7 +196,28 @@
                 Возращает целочисленное число, получаемое из переменной какого-либо типа.<br>
                 Переменные:
                 <ul>
-                    <li><code>value</code> - <b><code>any</code></b> - любое значение.<br>Если является строкой, то при неправильном формате (например, <code>"5 км/ч"</code> вместо просто <code>"5"</code>) откатывается к <code>0</code>.</li>
+                    <li><code>value</code> - <b><code>any</code></b> - любое значение.<br>Если является строкой, то при неправильном формате (например, <code>"5 км/ч"</code> вместо просто <code>"5"</code>) откатывается к <code>0</code></li>
+                </ul>
+            </td>
+            <td>
+                <code>int(true) -> 1</code><br>
+                <code>int("2") -> 2</code><br>
+                <code>int(3.14) -> 3</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>strToInt(value)</code>
+            </td>
+            <td>
+                <b><code>number</code></b>
+            </td>
+            <td>
+                Возращает целочисленное число, получаемое из строки.<br>
+                Просто разновидность функции выше, использовать можно как <code>strToInt("1")</code>, так и <code>int("1")</code> - результат один.<br>
+                Переменные:
+                <ul>
+                    <li><code>value</code> - <b><code>any</code></b> - любое значение.<br>Если является строкой, то при неправильном формате (например, <code>"5 км/ч"</code> вместо просто <code>"5"</code>) откатывается к <code>0</code></li>
                 </ul>
             </td>
             <td>
@@ -212,7 +237,7 @@
                 Возращает вещественное число, получаемое из переменной какого-либо типа.<br>
                 Переменные:
                 <ul>
-                    <li><code>value</code> - <b><code>any</code></b> - любое значение.<br>Если является строкой, то при неправильном формате (например, <code>"5.12 км/ч"</code> вместо просто <code>"5.12"</code>) откатывается к <code>0.0</code>.</li>
+                    <li><code>value</code> - <b><code>any</code></b> - любое значение.<br>Если является строкой, то при неправильном формате (например, <code>"5.12 км/ч"</code> вместо просто <code>"5.12"</code>) откатывается к <code>0.0</code></li>
                 </ul>
             </td>
             <td>
@@ -220,6 +245,15 @@
                 <code>float("2.234") -> 2.234</code><br>
                 <code>float(3) -> 3.0</code>
             </td>
+        </tr>
+    </table>
+    <h3>Текстовые функции</h3>
+    <table cellpadding="8px" border="2px">
+        <tr>
+            <td><b>Название</b></td>
+            <td><b>Возвращает</b></td>
+            <td><b>Пояснение</b></td>
+            <td><b>Пример</b></td>
         </tr>
         <tr>
             <td>
@@ -276,13 +310,14 @@
             </td>
             <td>
                 Превращает целочисленное число в строку, где большие разряды сокращены с помощью использования "k", "m" и т.п..<br>
+                <i>Заметка:</i> числа меньше 10000 не используют сокращения и делятся по разрядам, как при использовании <code>str1000Separated</code>.<br>
                 Переменные:
                 <ul>
                     <li><code>int</code> - <b><code>int</code></b> - любое целочисленное число.</li>
                 </ul>
             </td>
             <td>
-                <code>shortStr(1234) -> "1.2k"</code><br>
+                <code>shortStr(12345) -> "12.3k"</code><br>
                 <code>shortStr(12345678) -> "12.3m"</code>
             </td>
         </tr>
@@ -299,13 +334,134 @@
                 Переменные:
                 <ul>
                     <li><code>string</code> - <b><code>string</code></b> - строка, соответствующая ключу из <code>Strings\[локализация].yaml</code>.</li>
-                    <li><code>parameters</code> - <b><code>map&lt;string, string&gt;</string></code></b> - параметры в виде <code>{ \"параметр\" = \"значение\"; }</code>.<br>Значение может быть задано с использованием того же <code>str</code> и других превращающих данные в строку функций.</li>
+                    <li><code>parameters</code> - <b><code>map&lt;string, string&gt;</code></b> - параметры в виде <code>{ \"параметр\" = \"значение\"; }</code>.<br>Значение может быть задано с использованием того же <code>str</code> и других превращающих данные в строку функций.</li>
                 </ul>
             </td>
             <td>
                 <code>localize(key)</code><br>
                 <code>localize(key, { \"title\" = \"Название\"; })</code><br>
                 <code>localize(key, { \"index\" = str(currentIndex); })</code>
+            </td>
+        </tr>
+    </table>
+    <h3>Функции, связанные с цветом</h3>
+    <table cellpadding="8px" border="2px">
+        <tr>
+            <td><b>Название</b></td>
+            <td><b>Возвращает</b></td>
+            <td><b>Пояснение</b></td>
+            <td><b>Пример</b></td>
+        </tr>
+        <tr>
+            <td>
+                <code>rgb(value)</code><br>
+                <code>rgb(red, blue, green)</code>
+            </td>
+            <td>
+                <b><code>color</code></b>
+            </td>
+            <td>
+                Возращает цвет, получаемый из разных видов его задания в модели RGB (красный-зелёный-синий).<br>
+                Переменные:
+                <ul>
+                    <li><code>value</code> - <b><code>int</code> или <code>hex</code></b> - значение цвета в десятичном или шестнадцатеричном виде соответственно.<br>Переменная типа <code>hex</code> задаётся с помощью <code>#</code> (<code>rgb(#ff0000)</code>).</li>
+                    <li><code>red, blue, green</code> - <b><code>int</code></b> - значение красного, зелёного и синего оттенков соответственно от <code>0</code> до <code>255</code>.</li>
+                </ul>
+            </td>
+            <td>
+                <code>rgb(16777215)</code><br>
+                <code>rgb(#ffffff)</code><br>
+                <code>rgb(255, 255, 255)</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>rgba(value, alpha)</code><br>
+                <code>rgba(red, blue, green, alpha)</code>
+            </td>
+            <td>
+                <b><code>color</code></b>
+            </td>
+            <td>
+                Возращает цвет, получаемый из разных видов его задания в модели RGBA (красный-зелёный-синий-прозрачность).<br>
+                Переменные:
+                <ul>
+                    <li><code>value</code> - <b><code>int</code> или <code>hex</code></b> - значение цвета в десятичном или шестнадцатеричном виде соответственно.<br>Переменная типа <code>hex</code> задаётся с помощью <code>#</code> без части с прозрачностью (<code>rgb(#ff0000)</code>).</li>
+                    <li><code>red, blue, green</code> - <b><code>int</code></b> - значение красного, зелёного и синего оттенков соответственно от <code>0</code> до <code>255</code>.</li>
+                    <li><code>alpha</code> - <b><code>float</code></b> - значение прозрачности в процентном соотношении от <code>0</code> до <code>1</code>.</li>
+                </ul>
+            </td>
+            <td>
+                <code>rgba(16777215, 0.7)</code><br>
+                <code>rgb(#ffffff, 0.7)</code><br>
+                <code>rgb(255, 255, 255, 0.7)</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>hsb(hue, saturation, brightness)</code>
+            </td>
+            <td>
+                <b><code>color</code></b>
+            </td>
+            <td>
+                Возращает цвет, получаемый из разных видов его задания в модели HSB (оттенок-насыщенность-яркость).<br>
+                Переменные:
+                <ul>
+                    <li><code>hue</code> - <b><code>int</code></b> - значение оттенка на цветовом "круге" от <code>0</code> до <code>360</code>.</li>
+                    <li><code>saturation, brightness</code> - <b><code>int</code></b> - значение насыщенности и яркости соответственно в процентном соотношении от <code>0</code> до <code>100</code>.</li>
+                </ul>
+            </td>
+            <td>
+                <code>hsb(285, 85, 100)</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>hsba(hue, saturation, brightness, alpha)</code>
+            </td>
+            <td>
+                <b><code>color</code></b>
+            </td>
+            <td>
+                Возращает цвет, получаемый из разных видов его задания в модели HSBA (оттенок-насыщенность-яркость-прозрачность).<br>
+                Переменные:
+                <ul>
+                    <li><code>hue</code> - <b><code>int</code></b> - значение оттенка на цветовом "круге" от <code>0</code> до <code>360</code>.</li>
+                    <li><code>saturation, brightness</code> - <b><code>int</code></b> - значение насыщенности и яркости соответственно в процентном соотношении от <code>0</code> до <code>100</code>.</li>
+                    <li><code>alpha</code> - <b><code>float</code></b> - значение прозрачности в процентном соотношении от <code>0</code> до <code>1</code>.</li>
+                </ul>
+            </td>
+            <td>
+                <code>hsba(285, 85, 100, 0.75)</code>
+            </td>
+        </tr>
+    </table>
+    <h3>Малоизвестные и редковстречающиеся функции</h3>
+    <table cellpadding="8px" border="2px">
+        <tr>
+            <td><b>Название</b></td>
+            <td><b>Возвращает</b></td>
+            <td><b>Пояснение</b></td>
+            <td><b>Пример</b></td>
+        </tr>
+        <tr>
+            <td>
+                <code>pair(int, ???)</code><br>
+            </td>
+            <td>
+                <b><code>???</code></b>
+            </td>
+            <td>
+                Неизвестная на данный момент функция. Используется в коде всего шесть раз в одном и том же месте старого интерфейса при вызове ивента. Будет время - проверю как положено, что она из себя представляет.<br>
+                Переменные:
+                <ul>
+                    <li><code>int</code> - <b><code>int</code></b> - ???.</li>
+                    <li><code>???</code> - <b><code>??? (возможно bool)</code></b> - ???.</li>
+                </ul>
+            </td>
+            <td>
+                <code>pair(6, _isTurnedOn)</code>
             </td>
         </tr>
     </table>
