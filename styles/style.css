@@ -18,3 +18,12 @@ h1,h2,h3 {
     color: #fff;
     text-align: center;
 }
+
+table {
+    width: 100%;
+}
+
+.descr {
+    font-size: 10pt;
+    color: lightgray;
+}
