@@ -1,2 +1,1 @@
-Here lies the collection of stuff I understood from some of DAVA game engine files (used for WoT Blitz/Tanks Blitz).
-Здесь расположена коллекция всяких ништяков, которые я понял из движка DAVA (используемый для WoT Blitz/Tanks Blitz).
+Это - моя личная свалка. На сайте накинуты немногие фишки движка DAVA (тот, что в WoT Blitz/Tanks Blitz), которые я таки нашел время задокументировать. В репе лежат различные ассеты для прог, к разработке которых я иногда притрагиваюсь.
