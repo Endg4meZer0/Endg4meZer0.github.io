@@ -1,7 +1,193 @@
+@font-face {
+    font-family: "Mononoki Nerd Font Mono";
+    src: url('../fonts/MononokiNerdFontMono-Regular.ttf')
+}
+
 body {
-    background: #161616;
+    margin: 0px;
+    background: linear-gradient(37deg, #2c6051, #1a2322);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimatedGradientBackground 24s ease infinite;
+    -moz-animation: AnimatedGradientBackground 24s ease infinite;
+    -o-animation: AnimatedGradientBackground 24s ease infinite;
+    animation: AnimatedGradientBackground 24s ease infinite;
+}
+
+#endg4me-svg {
+    display: block;
+    color: #8bf6d4;
+    margin: auto;
+    transform: translateX(16px);
+    transform: scale(min(1, 100vw / 840px))
+}
+
+.body .content {
+    margin-top: max(32px, 10vh)
+}
+
+.lyrics {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 16pt;
+    margin: 8px;
+    text-align: center;
+    color: #f5ead1;
+}
+
+.lyrics#last {
+    font-style: italic;
+    font-weight: 800;
+    color: #f5e1b1;
+}
+
+.lyrics #link {
+    font-size: 11pt;
+    margin-top: 32px;
+    color: #eee9;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+    margin-top: 16px;
+    place-content: center;
+}
+
+.links a #github {
+    fill: #cfcfcf;
+}
+
+.links a #spotify {
+    fill: #61e18e;
+}
+
+.links a #discord {
+    fill: #a5c5e5;
+}
+
+.links a #telegram {
+    fill: #40B3E0;
+}
+
+.padding {
+    height: 8vh;
+}
+
+.quote-space {
+    font-size: 24pt;
+}
+
+#quote {
+    text-align: center;
+    font-style: italic;
+    font-weight: 300;
+    font-family: "Roboto";
+}
+
+#quote-author {
+    text-align: center;
+    font-weight: 500;
+    font-family: "Roboto";
+}
+
+.header {
+    background: #1a2322ee;
+    height: 32px;
+}
+
+.terminal {
+    text-align: left;
+    line-height: 32px;
+    margin-left: 8px;
+    font-family: "Mononoki Nerd Font Mono";
+    color: #eee;
+}
+
+.terminal#cursor {
+    color: #eee;
+    -webkit-animation: CursorBlink 0.5s step-end infinite;
+    -moz-animation: CursorBlink 0.5s step-end infinite;
+    -o-animation: CursorBlink 0.5s step-end infinite;
+    animation: CursorBlink 0.5s step-end infinite;
+}
+
+@-webkit-keyframes CursorBlink {
+    0% {
+        color: transparent;
+    }
+    100% {
+        color: #eee;
+    }
+}
+
+@-moz-keyframes CursorBlink {
+    0% {
+        color: transparent;
+    }
+    100% {
+        color: #eee;
+    }
+}
+
+@-o-keyframes CursorBlink {
+    0% {
+        color: transparent
+    }
+    100% {
+        color: #eee
+    }
+}
+
+@keyframes CursorBlink {
+    0% {
+        color: transparent
+    }
+    100% {
+        color: #eee
+    }
+}
+
+.footer {
+    background: #1a2322;
     color: #fff;
     font-family: 'Roboto';
+    margin: 0px;
+    height: 5vh;
+}
+
+.footer-note {
+    text-align: center;
+    font-style: italic;
+    color: #999;
+    line-height: 5vh;
+}
+
+.body {
+    height: calc(82vh - 32px);
+    font-family: "Roboto";
+}
+
+@-webkit-keyframes AnimatedGradientBackground {
+    0%{background-position:94% 0%}
+    50%{background-position:7% 100%}
+    100%{background-position:94% 0%}
+}
+@-moz-keyframes AnimatedGradientBackground {
+    0%{background-position:94% 0%}
+    50%{background-position:7% 100%}
+    100%{background-position:94% 0%}
+}
+@-o-keyframes AnimatedGradientBackground {
+    0%{background-position:94% 0%}
+    50%{background-position:7% 100%}
+    100%{background-position:94% 0%}
+}
+@keyframes AnimatedGradientBackground {
+    0%{background-position:94% 0%}
+    50%{background-position:7% 100%}
+    100%{background-position:94% 0%}
 }
 
 a, a:visited {
@@ -17,10 +203,6 @@ h1,h2,h3 {
     font-family: 'Roboto';
     color: #fff;
     text-align: center;
-}
-
-table {
-    width: 100%;
 }
 
 .descr {
