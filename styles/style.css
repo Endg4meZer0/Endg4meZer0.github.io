@@ -3,6 +3,11 @@
     src: url('../fonts/MononokiNerdFontMono-Regular.ttf')
 }
 
+@font-face {
+    font-family: "Better Land";
+    src: url('../fonts/Better\ Land\ RUS.otf')
+}
+
 body {
     margin: 0px;
     background: linear-gradient(37deg, #2c6051, #1a2322);
@@ -19,7 +24,6 @@ body {
     color: #8bf6d4;
     margin: auto;
     transform: translateX(16px);
-    transform: scale(min(1, 100vw / 840px))
 }
 
 .body .content {
@@ -27,9 +31,10 @@ body {
 }
 
 .lyrics {
+    font-family: 'Better Land';
     font-style: italic;
     font-weight: 300;
-    font-size: 16pt;
+    font-size: 32pt;
     margin: 8px;
     text-align: center;
     color: #f5ead1;
@@ -42,6 +47,7 @@ body {
 }
 
 .lyrics #link {
+    font-family: 'Roboto';
     font-size: 11pt;
     margin-top: 32px;
     color: #eee9;
@@ -50,7 +56,7 @@ body {
 .links {
     display: flex;
     flex-direction: row;
-    column-gap: 16px;
+    column-gap: 64px;
     margin-top: 16px;
     place-content: center;
 }
@@ -75,21 +81,11 @@ body {
     height: 8vh;
 }
 
-.quote-space {
+.about-me {
     font-size: 24pt;
-}
-
-#quote {
     text-align: center;
     font-style: italic;
     font-weight: 300;
-    font-family: "Roboto";
-    color: #e3e3e3;
-}
-
-#quote-author {
-    text-align: center;
-    font-weight: 500;
     font-family: "Roboto";
     color: #e3e3e3;
 }
@@ -167,28 +163,28 @@ body {
 }
 
 .body {
-    height: calc(82vh - 32px);
+    height: calc(100% - 32px);
     font-family: "Roboto";
 }
 
 @-webkit-keyframes AnimatedGradientBackground {
     0%{background-position:94% 0%}
-    50%{background-position:7% 100%}
+    50%{background-position:7% 80%}
     100%{background-position:94% 0%}
 }
 @-moz-keyframes AnimatedGradientBackground {
     0%{background-position:94% 0%}
-    50%{background-position:7% 100%}
+    50%{background-position:7% 80%}
     100%{background-position:94% 0%}
 }
 @-o-keyframes AnimatedGradientBackground {
     0%{background-position:94% 0%}
-    50%{background-position:7% 100%}
+    50%{background-position:7% 80%}
     100%{background-position:94% 0%}
 }
 @keyframes AnimatedGradientBackground {
     0%{background-position:94% 0%}
-    50%{background-position:7% 100%}
+    50%{background-position:7% 80%}
     100%{background-position:94% 0%}
 }
 
